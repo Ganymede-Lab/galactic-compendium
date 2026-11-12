@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galactic Compendium — Worldbuilding &amp; Lore Repository</title>
+  <meta name="description" content="A calm, reading-first worldbuilding workspace and collaborative lore compendium for the Celestial Library and the Galactic Federation." />
+  <link rel="stylesheet" href="/src/styles/tokens.css?v=phase1" />
+  <link rel="stylesheet" href="/src/styles/layout.css?v=phase1" />
+  <link rel="stylesheet" href="/src/styles/components.css?v=phase1" />
+</head>
+<body>
+
+  <div class="app-shell">
+    <!-- STICKY PRIMARY NAVIGATION HEADER -->
+    <header class="top-header">
+      <div class="header-inner">
+        <div class="brand-group">
+          <div class="brand-emblem" aria-hidden="true">GC</div>
+          <div>
+            <div class="brand-title">Galactic Compendium</div>
+            <div class="brand-subtitle">Celestial Library &amp; Galactic Federation Archive</div>
+          </div>
+        </div>
+
+        <!-- 1. Primary Task Destinations (Consistent & Visible) -->
+        <nav class="primary-nav" aria-label="Primary Task Navigation">
+          <button type="button" id="nav-dest-explore" class="primary-nav-btn active" aria-current="page">
+            Explore
+          </button>
+          <button type="button" id="nav-dest-create" class="primary-nav-btn">
+            Create
+          </button>
+          <button type="button" id="nav-dest-timeline" class="primary-nav-btn">
+            Timeline
+          </button>
+          <button type="button" id="nav-dest-continuity" class="primary-nav-btn">
+            Continuity
+          </button>
+        </nav>
+
+        <!-- Global Search & Primary Contribution Action -->
+        <div class="header-utilities">
+          <div style="position:relative;">
+            <input
+              id="search-input"
+              type="search"
+              class="search-box"
+              placeholder="Search lore, worlds, events..."
+              aria-label="Search Compendium entries"
+              autocomplete="off"
+            />
+            <div id="search-popover" class="search-popover hidden" role="listbox" aria-label="Search Results"></div>
+          </div>
+          <button type="button" id="btn-new-entry" class="btn btn-primary">+ New Entry</button>
+        </div>
+      </div>
+
+      <!-- Contextual Subbar (Adapts to active destination: Explore vs Create vs Timeline vs Continuity) -->
+      <div id="context-subbar" class="context-subbar">
+        <div id="context-subbar-inner" class="context-subbar-inner"></div>
+      </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <div class="workspace-container">
+      <div id="workspace-layout" class="explore-layout">
+
+        <!-- 2. Contextual Archive Sidebar (Visible ONLY in Explore, Collapsible) -->
+        <aside id="explore-sidebar" class="explore-sidebar" aria-label="Compendium Categories and Entry Index">
+          <div>
+            <div class="sidebar-section-label">
+              <span>Categories</span>
+            </div>
+            <div id="category-list" class="category-nav"></div>
+          </div>
+
+          <div>
+            <div class="sidebar-section-label">
+              <span>Entries</span>
+              <span id="entry-count" style="font-family:var(--font-mono);">0</span>
+            </div>
+            <div id="article-list" class="entry-directory"></div>
+          </div>
+
+          <div style="border-top:1px solid var(--border-subtle); padding-top:0.85rem;">
+            <div class="sidebar-section-label">
+              <span>Archive Data</span>
+            </div>
+            <div style="display:flex; gap:0.4rem;">
+              <button type="button" id="btn-export-json" class="btn" style="flex:1; font-size:0.78rem; padding:0.35rem 0.5rem;">Export JSON</button>
+              <button type="button" id="btn-reset-seed" class="btn" style="font-size:0.78rem; padding:0.35rem 0.5rem;" title="Reload default seed lore">Sync Seed</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Primary Content Area -->
+        <main id="main-view-container"></main>
+      </div>
+    </div>
+
+    <!-- Mobile Persistent Bottom Navigation (Avoids scrolling back to top on small screens) -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Primary Navigation">
+      <button type="button" data-mobile-dest="explore" class="mobile-nav-btn active">Explore</button>
+      <button type="button" data-mobile-dest="create" class="mobile-nav-btn">Create</button>
+      <button type="button" data-mobile-dest="timeline" class="mobile-nav-btn">Timeline</button>
+      <button type="button" data-mobile-dest="continuity" class="mobile-nav-btn">Continuity</button>
+    </nav>
+  </div>
+
+  <!-- MODAL 1: CREATE / EDIT WIKI ARTICLE -->
+  <div id="modal-article" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-article-heading">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:1rem;">
+        <h3 id="modal-article-heading" style="font-size:1.1rem; font-weight:700;">Create Compendium Entry</h3>
+        <button type="button" id="btn-close-article-modal" class="btn" style="padding:0.25rem 0.6rem;">Close</button>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:0.85rem;">
+        <div class="stage-pair">
+          <div>
+            <label for="form-art-title" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Entry Title</label>
+            <input id="form-art-title" type="text" class="form-input" placeholder="e.g., The Solace Accord, Phorvallis, Vornaxis" />
+          </div>
+          <div>
+            <label for="form-art-category" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Category</label>
+            <select id="form-art-category" class="form-select">
+              <option value="Galactic Federation">Galactic Federation</option>
+              <option value="Worlds & Systems">Worlds &amp; Systems</option>
+              <option value="Caretakers">Caretakers</option>
+              <option value="Cosmology & Constructs">Cosmology &amp; Constructs</option>
+              <option value="Artifacts & Phenomena">Artifacts &amp; Phenomena</option>
+              <option value="Chronicles & Stories">Chronicles &amp; Stories</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="form-art-subtitle" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Short Description / Subtitle</label>
+          <input id="form-art-subtitle" type="text" class="form-input" placeholder="e.g., Principal Stellar-State · Cultural & Scientific Center" />
+        </div>
+
+        <div>
+          <label for="form-art-quote" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Archival Epigraph / Orichalcum Frame Quote</label>
+          <input id="form-art-quote" type="text" class="form-input" placeholder="An in-universe sensory imprint or archival quote..." />
+        </div>
+
+        <div>
+          <label for="form-art-body" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Main Lore Content (Use [[Title]] to link entries)</label>
+          <textarea id="form-art-body" rows="5" class="form-textarea" placeholder="Write the encyclopedia article here..."></textarea>
+        </div>
+
+        <div class="stage-pair">
+          <div>
+            <label for="form-art-infobox" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Supporting Facts (One per line: Label: Value)</label>
+            <textarea id="form-art-infobox" rows="3" class="form-textarea" style="font-family:var(--font-mono);"></textarea>
+          </div>
+          <div>
+            <label for="form-art-meta" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Continuity &amp; Provenance Notes</label>
+            <textarea id="form-art-meta" rows="3" class="form-textarea"></textarea>
+          </div>
+        </div>
+
+        <div>
+          <label for="form-art-hooks" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Open Development Threads (One per line)</label>
+          <textarea id="form-art-hooks" rows="2" class="form-textarea"></textarea>
+        </div>
+
+        <div id="modal-article-feedback" style="display:none;"></div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
+          <button type="button" id="btn-cancel-article-modal" class="btn">Cancel</button>
+          <button type="button" id="btn-save-article-modal" class="btn btn-primary">Save Entry</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: ADD CHRONOLOGICAL EVENT -->
+  <div id="modal-event" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-event-heading">
+    <div class="modal-card" style="max-width:460px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:1rem;">
+        <h3 id="modal-event-heading" style="font-size:1.05rem; font-weight:700;">Add Timeline Event</h3>
+        <button type="button" id="btn-close-event-modal" class="btn" style="padding:0.25rem 0.6rem;">Close</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem;">
+        <div>
+          <label for="form-ev-epoch" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Date / Epoch Tag</label>
+          <input id="form-ev-epoch" type="text" class="form-input" placeholder="e.g., GFST 75 · Or Formative Era" />
+        </div>
+        <div>
+          <label for="form-ev-title" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Event Title</label>
+          <input id="form-ev-title" type="text" class="form-input" placeholder="e.g., Discovery of the Aetherion Beacon" />
+        </div>
+        <div>
+          <label for="form-ev-desc" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Description (Supports [[Wiki Links]])</label>
+          <textarea id="form-ev-desc" rows="3" class="form-textarea"></textarea>
+        </div>
+        <div id="modal-event-feedback" style="display:none;"></div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem;">
+          <button type="button" id="btn-save-event-modal" class="btn btn-primary">Save Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: ADD 5-STAGE PLANETARY GENESIS SEQUENCE -->
+  <div id="modal-planet" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-planet-heading">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:1rem;">
+        <h3 id="modal-planet-heading" style="font-size:1.05rem; font-weight:700;">Add 5-Stage World Causal Sequence</h3>
+        <button type="button" id="btn-close-planet-modal" class="btn" style="padding:0.25rem 0.6rem;">Close</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:0.75rem;">
+        <div class="stage-pair">
+          <div>
+            <label for="form-pc-name" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">World / Habitat Name</label>
+            <input id="form-pc-name" type="text" class="form-input" placeholder="e.g., Phorvallis, Luminethra, Crithona" />
+          </div>
+          <div>
+            <label for="form-pc-polity" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Polity Status</label>
+            <input id="form-pc-polity" type="text" class="form-input" placeholder="e.g., Astrysis Member World" />
+          </div>
+        </div>
+        <div>
+          <label for="form-pc-s1" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Stage 1: Quantum &amp; Cosmological Building Blocks</label>
+          <input id="form-pc-s1" type="text" class="form-input" placeholder="How the star system and proto-planetary matter condensed..." />
+        </div>
+        <div>
+          <label for="form-pc-s2" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Stage 2: Orbital Mechanics &amp; Local Calendar</label>
+          <input id="form-pc-s2" type="text" class="form-input" placeholder="Orbital resonance, axial tilt, and local calendar vs. GFST..." />
+        </div>
+        <div>
+          <label for="form-pc-s3" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Stage 3: Planetary Formation, Crust &amp; Geography</label>
+          <input id="form-pc-s3" type="text" class="form-input" placeholder="Core accretion, tectonics, oceans, and crustal stability..." />
+        </div>
+        <div>
+          <label for="form-pc-s4" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Stage 4: Emergent Resources &amp; Environmental Pressures</label>
+          <input id="form-pc-s4" type="text" class="form-input" placeholder="What material wealth or hazards resulted from Stage 3..." />
+        </div>
+        <div>
+          <label for="form-pc-s5" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-primary); margin-bottom:0.25rem;">Stage 5: Civilizational &amp; Historical Outcome (GFST Sequence)</label>
+          <input id="form-pc-s5" type="text" class="form-input" placeholder="How Stages 1–4 caused this world's political role and history..." />
+        </div>
+        <div id="modal-planet-feedback" style="display:none;"></div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
+          <button type="button" id="btn-save-planet-modal" class="btn btn-primary">Save Causal Sequence &amp; Sync Wiki</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: ARTWORK LIGHTBOX -->
+  <div id="modal-lightbox" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Enlarged Artwork View" style="cursor:zoom-out;">
+    <div style="max-width:860px; text-align:center;">
+      <div style="display:flex; justify-content:flex-end; margin-bottom:0.5rem;">
+        <button type="button" id="btn-close-lightbox" class="btn" style="background:var(--bg-surface); color:var(--text-primary);">Close Preview (Esc)</button>
+      </div>
+      <img id="lightbox-img" src="" alt="Full Resolution Visual" style="max-width:100%; max-height:78vh; border-radius:var(--radius-md); border:1px solid var(--border-strong); box-shadow:var(--shadow-modal);" />
+      <p id="lightbox-caption" style="font-size:0.88rem; color:#ffffff; margin-top:0.75rem; font-style:italic;"></p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js?v=phase1"></script>
+</body>
+</html>

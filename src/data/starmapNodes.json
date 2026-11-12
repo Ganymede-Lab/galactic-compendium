@@ -1,0 +1,216 @@
+{
+  "federation": [
+    {
+      "id": "astrysis",
+      "label": "Astrysis Prime (Lyvithar)",
+      "sub": "Astrysis Capital \u00b7 Culture & Science",
+      "x": 280,
+      "y": 140,
+      "type": "stellar-state",
+      "color": "#38bdf8",
+      "articleId": "astrysis"
+    },
+    {
+      "id": "phorvallis",
+      "label": "Phorvallis",
+      "sub": "Astrysis Member World",
+      "x": 195,
+      "y": 95,
+      "type": "member",
+      "color": "#38bdf8",
+      "articleId": "astrysis"
+    },
+    {
+      "id": "luminethra",
+      "label": "Luminethra",
+      "sub": "Astrysis Member World",
+      "x": 345,
+      "y": 85,
+      "type": "member",
+      "color": "#38bdf8",
+      "articleId": "astrysis"
+    },
+    {
+      "id": "veridun",
+      "label": "Veridun",
+      "sub": "Astrysis Associated Territory",
+      "x": 215,
+      "y": 195,
+      "type": "associated",
+      "color": "#38bdf8",
+      "articleId": "astrysis"
+    },
+    {
+      "id": "myrcathis",
+      "label": "Myrcathis",
+      "sub": "Frontier / Proposed Astrysis Member",
+      "x": 115,
+      "y": 135,
+      "type": "frontier",
+      "color": "#94a3b8",
+      "articleId": "astrysis"
+    },
+    {
+      "id": "velstron",
+      "label": "Velstron",
+      "sub": "Frontier / Developing Candidate",
+      "x": 130,
+      "y": 225,
+      "type": "frontier",
+      "color": "#94a3b8",
+      "articleId": "independent-and-frontier"
+    },
+    {
+      "id": "hellonex",
+      "label": "Heilon Prime (Hellonex)",
+      "sub": "Hellonex Capital \u00b7 260-Day Cycle",
+      "x": 580,
+      "y": 165,
+      "type": "stellar-state",
+      "color": "#f59e0b",
+      "articleId": "hellonex"
+    },
+    {
+      "id": "draxon",
+      "label": "Draxon Prime",
+      "sub": "Hellonex Associated Territory",
+      "x": 670,
+      "y": 115,
+      "type": "associated",
+      "color": "#f59e0b",
+      "articleId": "hellonex"
+    },
+    {
+      "id": "eryndros",
+      "label": "Eryndros",
+      "sub": "Hellonex World (GFST 95/140/200)",
+      "x": 665,
+      "y": 235,
+      "type": "member",
+      "color": "#f59e0b",
+      "articleId": "eryndros"
+    },
+    {
+      "id": "omnexis",
+      "label": "Omnexis",
+      "sub": "Independent Enclaves / Hellonex Overlap",
+      "x": 545,
+      "y": 285,
+      "type": "disputed",
+      "color": "#eab308",
+      "articleId": "independent-and-frontier"
+    },
+    {
+      "id": "aetherion",
+      "label": "Aetherion Cluster",
+      "sub": "Black Hole Resource Nexus (GFST 75 Beacon)",
+      "x": 420,
+      "y": 310,
+      "type": "stellar-state",
+      "color": "#10b981",
+      "articleId": "aetherion-cluster"
+    },
+    {
+      "id": "vornaxis",
+      "label": "Vornaxis",
+      "sub": "Independent Trade Hub",
+      "x": 425,
+      "y": 205,
+      "type": "independent",
+      "color": "#2dd4bf",
+      "articleId": "independent-and-frontier"
+    },
+    {
+      "id": "crithona",
+      "label": "Crithona",
+      "sub": "Independent Planetary System",
+      "x": 270,
+      "y": 345,
+      "type": "independent",
+      "color": "#94a3b8",
+      "articleId": "independent-and-frontier"
+    },
+    {
+      "id": "zykaris",
+      "label": "Zykaris",
+      "sub": "Fallen Civilization Ruins",
+      "x": 725,
+      "y": 335,
+      "type": "fallen",
+      "color": "#ef4444",
+      "articleId": "independent-and-frontier"
+    }
+  ],
+  "links": [
+    [
+      "astrysis",
+      "hellonex",
+      "pillar"
+    ],
+    [
+      "hellonex",
+      "aetherion",
+      "pillar"
+    ],
+    [
+      "aetherion",
+      "astrysis",
+      "pillar"
+    ],
+    [
+      "astrysis",
+      "phorvallis",
+      "member"
+    ],
+    [
+      "astrysis",
+      "luminethra",
+      "member"
+    ],
+    [
+      "astrysis",
+      "veridun",
+      "associated"
+    ],
+    [
+      "astrysis",
+      "myrcathis",
+      "frontier"
+    ],
+    [
+      "astrysis",
+      "velstron",
+      "frontier"
+    ],
+    [
+      "hellonex",
+      "draxon",
+      "associated"
+    ],
+    [
+      "hellonex",
+      "eryndros",
+      "member"
+    ],
+    [
+      "hellonex",
+      "omnexis",
+      "frontier"
+    ],
+    [
+      "vornaxis",
+      "astrysis",
+      "trade"
+    ],
+    [
+      "vornaxis",
+      "hellonex",
+      "trade"
+    ],
+    [
+      "vornaxis",
+      "aetherion",
+      "trade"
+    ]
+  ]
+}

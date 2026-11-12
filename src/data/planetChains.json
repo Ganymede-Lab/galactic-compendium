@@ -1,0 +1,62 @@
+[
+  {
+    "id": "heilon-prime",
+    "name": "Heilon Prime (Hellonex Principal World)",
+    "polity": "Principal Capital of Hellonex \u00b7 Industrial Powerhouse",
+    "stage1": "Condensed within a super-dense, heavy-metal proto-stellar disk enriched by an ancient neutron-star merger.",
+    "stage2": "Locked into a 260-local-day orbital/rotational resonance cycle\u2014directly inspiring the 260-day Mayan Tzolk'in-modeled Hellonian Calendar alongside GFST.",
+    "stage3": "Accreted a massive iron-iridium core and hyper-active tectonic mantle; high volcanic outgassing forged vast surface plateaus of exposed metallic veins.",
+    "stage4": "Abundant refractory alloys, geothermal vents, and high-density ores made planetary-scale smelting and orbital shipyards naturally viable.",
+    "stage5": "Emerged as the industrial powerhouse of the Galactic Federation (anchoring Draxon Prime and Eryndros), balancing Astrysis's science and Aetherion's raw extraction."
+  },
+  {
+    "id": "eryndros",
+    "name": "Eryndros (Hellonex-Affiliated World)",
+    "polity": "Hellonex-Affiliated Federation World",
+    "stage1": "Formed in the outer frost-line transition zone of its star system with volatile ices layered over a geothermal silicate core.",
+    "stage2": "Synchronized to GFST for colonial administration while tracking industrial quotas on the 260-day Hellonian cycle.",
+    "stage3": "Developed a hollow, crystalline-ice and subterranean geothermal crust\u2014creating pockets of subterranean heat (\"Thermasis\") beneath fragile crystalline caverns.",
+    "stage4": "Sub-surface thermal energy attracted heavy colonial extraction (Thermasis Colony, GFST 95), but over-stressing the crystalline strata risked systemic crustal failure.",
+    "stage5": "Suffered the catastrophic Crystalis Collapse at GFST 140 when the thermal-crystalline equilibrium shattered, directly necessitating the planetary-scale Frostveil Initiative at GFST 200."
+  },
+  {
+    "id": "astrysis-prime",
+    "name": "Astrysis Prime / Lyvithar Prime",
+    "polity": "Capital World of Astrysis \u00b7 Cultural & Scientific Center",
+    "stage1": "Ignited around a stable, long-lived main-sequence star with low flare activity and a clean magnetosphere.",
+    "stage2": "Gentle axial tilt and predictable seasonal harmonics fostered early astronomical observation and standardized timekeeping.",
+    "stage3": "Formed stable continental cratons separated by calm archipelagic seas; low seismic devastation allowed ancient libraries and observatories to survive millennia.",
+    "stage4": "Long-term ecological stability favored cognitive, philosophical, and scientific continuity over sheer survivalist industrialism.",
+    "stage5": "Became the intellectual and cultural heart of the Galactic Federation, integrating Phorvallis and Luminethra, associating with Veridun, and evaluating frontier worlds Myrcathis and Velstron."
+  },
+  {
+    "id": "aetherion-cluster",
+    "name": "Aetherion Cluster (Black Hole Habitats)",
+    "polity": "Third Principal Stellar-State \u00b7 The Resource Nexus",
+    "stage1": "Stellar core collapse birthed a gravitational singularity surrounded by shattered planetary remnants and rogue planetoids.",
+    "stage2": "Relativistic time-dilation gradients near the black hole required an absolute external benchmark\u2014making the Aetherion Beacon (GFST 75) and GFST essential.",
+    "stage3": "No single planet formed; instead, mineral-rich rogue planetoids and shattered planetary cores were trapped in chaotic orbits until stabilized by the Aetherion Beacon at GFST 75.",
+    "stage4": "Exposed planetary cores (stripped of crusts by tidal forces) offered direct, zero-overburden access to rare heavy isotopes and singularity energy.",
+    "stage5": "Granted the Galactic Federation strategic resource independence, earning recognition as the third Principal Stellar-State alongside Astrysis and Hellonex."
+  },
+  {
+    "id": "omnexis",
+    "name": "Omnexis (Disputed / Independent System)",
+    "polity": "Independent System (Privateers & Research Enclaves) / Hellonex Draft Overlap",
+    "stage1": "Formed inside a dense debris-disk and sensor-scattering ionized nebula on the flank of Hellonex space.",
+    "stage2": "Irregular outer-system orbital paths create natural navigational blind spots between standard GFST beacon lanes.",
+    "stage3": "Fragmented moons and shadowed planetary canyons provide concealed natural harbors and isolated laboratory basins.",
+    "stage4": "Proximity to Hellonex industrial shipping lanes combined with nebula cover rewarded both autonomous scientific experimentation and privateering.",
+    "stage5": "Appeared in early Hellonex territorial claims while operating de facto as an independent system of privateers and research enclaves."
+  },
+  {
+    "id": "zykaris",
+    "name": "Zykaris (Fallen Civilization)",
+    "polity": "Fallen Civilization (Non-Federation)",
+    "stage1": "Ancient stellar nursery seeded during an early radiative surge.",
+    "stage2": "Pre-Federation local epochs now indexed post-mortem by Astrysis archaeologists and Caretakers.",
+    "stage3": "Planetary surface scarred by terminal civilization-scale catastrophe (open canon slot for exact geological trigger).",
+    "stage4": "Dormant ruins, relic infrastructure, and cautionary archaeological strata.",
+    "stage5": "Stands as a fallen civilization outside the Galactic Federation\u2014a major mystery for Astrysis scholars and Celestial Library Caretakers alike."
+  }
+]

@@ -1,0 +1,53 @@
+:root {
+  /* Calm Research Library Palette — Dark, readable ink text on warm archival paper */
+  --bg-page: hsl(40, 24%, 96%);
+  --bg-surface: hsl(40, 30%, 99%);
+  --bg-subtle: hsl(38, 20%, 93%);
+  --bg-hover: hsl(38, 22%, 89%);
+
+  /* Dark, High-Contrast Readable Text */
+  --text-primary: hsl(24, 14%, 11%);
+  --text-secondary: hsl(24, 10%, 30%);
+  --text-muted: hsl(24, 8%, 44%);
+
+  /* Reserved Amber Identity (Active Navigation & Primary Actions Only) */
+  --amber-strong: hsl(32, 88%, 38%);
+  --amber-Strong-hover: hsl(32, 90%, 32%);
+  --amber-tint: hsl(38, 75%, 92%);
+  --amber-border: hsl(35, 65%, 72%);
+
+  /* Recognizable Link Color (High Contrast) */
+  --link-color: hsl(28, 84%, 34%);
+  --link-hover: hsl(28, 90%, 24%);
+
+  /* Subtle Structural Borders (Reduced Visual Noise) */
+  --border-subtle: hsl(36, 16%, 85%);
+  --border-strong: hsl(36, 16%, 74%);
+
+  /* Focus Ring for Keyboard Accessibility */
+  --focus-ring: 0 0 0 3px hsla(32, 88%, 38%, 0.35);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, monospace;
+
+  /* Spacing & Radii */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --shadow-quiet: 0 1px 3px rgba(24, 20, 14, 0.06);
+  --shadow-modal: 0 16px 40px rgba(24, 20, 14, 0.18);
+
+  /* Backwards-compatible aliases for untouched interior tools (Seeder, Sequence, Starmap, Continuity) */
+  --orichalcum: var(--amber-strong);
+  --orichalcum-soft: var(--amber-tint);
+  --cerulean: hsl(202, 72%, 34%);
+  --cerulean-soft: hsl(202, 55%, 92%);
+  --emerald: hsl(156, 64%, 28%);
+  --emerald-soft: hsl(156, 48%, 92%);
+  --surface-interactive: var(--bg-subtle);
+  --surface-hover: var(--bg-hover);
+  --hairline: var(--border-subtle);
+  --hairline-strong: var(--border-strong);
+}

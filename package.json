@@ -1,0 +1,10 @@
+{
+  "name": "galactic-compendium",
+  "version": "2.0.0",
+  "description": "Galactic Compendium — Multi-file Worldbuilding, Causal Sequence & Lore Repository Web App",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}

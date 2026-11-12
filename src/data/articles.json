@@ -1,0 +1,597 @@
+[
+  {
+    "id": "galactic-federation",
+    "title": "The Galactic Federation",
+    "category": "Galactic Federation",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "stellar",
+    "subtitle": "Multi-Civilizational Political Union of Three Principal Stellar-States \u00b7 Far Future of Earth's Universe",
+    "quote": "\"Not simply three governments sharing a flag, nor a centralized empire\u2014the Federation is a layered political ecosystem balanced between knowledge, industry, and the black-hole frontier.\"",
+    "body": "**The Galactic Federation** is a multi-civilizational political union inspired by **Aztec political organization** rather than a conventional centralized planetary empire, canonically taking place **far in the future of the same persistent seeded universe in which [[Earth]] once existed**. Instead of ruling a homogeneous collection of worlds, the Federation functions as a layered union of **three principal Stellar-States**\u2014each retaining its own distinct identity, local calendar and governance, and strategic function while participating in a larger interstellar structure.\n\n### The Three Principal Stellar-States\n1. **[[Astrysis]] (The Cultural & Scientific Center)** \u2014 Anchored by **Astrysis Prime** (*Lyvithar Prime*), representing intellectual, scientific, and cultural leadership across member worlds such as **Phorvallis**, **Luminethra**, and associated territory **Veridun**.\n2. **[[Hellonex]] (The Industrial Powerhouse)** \u2014 Anchored by **Heilon Prime**, driving manufacturing and material production across territories such as **Draxon Prime** and **[[Eryndros]]**, while maintaining its own 260-day Mayan *Tzolk'in*-inspired calendar alongside Federation time.\n3. **[[Aetherion Cluster]] (The Resource Nexus)** \u2014 A non-planetary Stellar-State composed of rogue planetoids and asteroid settlements orbiting a black hole, stabilized by the **Aetherion Beacon** (discovered at **GFST 75**).\n\n### The Broader Galaxy & Non-State Participants\nNot every civilization in the galaxy belongs to the Federation. It coexists within a broader ecosystem that includes independent systems (**[[Crithona]]**, **[[Omnexis]]**), frontier civilizations (**Velstron**, **Myrcathis**), fallen civilizations (**Zykaris**), independent trade hubs (**[[Vornaxis]]**), and mobile unaligned **[[Nomadic Void Caravans]]**.\n\n### Chronology & Shared Universal Lineage with Earth\n**GFST** (Galactic Federation Standard Time) provides a shared chronological reference across all three Stellar-States for historical synchronization, interstellar commerce, and political treaties without forcing member worlds (such as [[Hellonex]]) to abandon their traditional calendars. Because the Federation unfolds in the distant future of [[Earth]]'s universe, when Caretaker [[Illyad]] (Homer, plucked from ancient Earth) observes the Federation through his [[Orichalcum Frames]], he is witnessing the far-future horizon of his own home cosmos.",
+    "infobox": [
+      {
+        "label": "Governance Model",
+        "value": "Aztec-Inspired Layered Political Union"
+      },
+      {
+        "label": "Universal Continuity",
+        "value": "Far Future of [[Earth]]'s Persistent Universe"
+      },
+      {
+        "label": "Stellar-State 1",
+        "value": "[[Aetherion Cluster]] (Resources & Commerce)"
+      },
+      {
+        "label": "Stellar-State 2",
+        "value": "[[Astrysis]] (Culture & Science)"
+      },
+      {
+        "label": "Stellar-State 3",
+        "value": "[[Hellonex]] (Industrial Production)"
+      },
+      {
+        "label": "Standard Chronology",
+        "value": "GFST (Galactic Federation Standard Time)"
+      },
+      {
+        "label": "Founding Treaty",
+        "value": "The Solace Accord"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Formative Era (Seq. 1)",
+        "title": "The Galactic Front",
+        "desc": "Early interstellar coalition and political alignment preceding the Federation's consolidation. (Exact date placeholder preserved)."
+      },
+      {
+        "epoch": "Formative Era (Seq. 2)",
+        "title": "The Starfall War",
+        "desc": "Major interstellar conflict during the formative struggles prior to the Federation's current structure."
+      },
+      {
+        "epoch": "Formative Era (Seq. 3)",
+        "title": "The Battle of the Verdant Belt",
+        "desc": "Pivotal engagement during the formative wars."
+      },
+      {
+        "epoch": "Formative Era (Seq. 4)",
+        "title": "The Collapse of the Galactic Front",
+        "desc": "Dissolution of the earlier Galactic Front framework, paving the way for a new constitutional order."
+      },
+      {
+        "epoch": "Formative Era (Seq. 5)",
+        "title": "The Solace Accord",
+        "desc": "Foundational political compact transitioning the galaxy toward the Galactic Federation's three-pillar Stellar-State arrangement."
+      },
+      {
+        "epoch": "GFST 75",
+        "title": "Discovery of the Aetherion Beacon",
+        "desc": "Stabilizes the black-hole orbital environment of the [[Aetherion Cluster]], predating the later Federation-wide Beacon."
+      }
+    ],
+    "hooks": [
+      "Reconstruct the Federation Government Architecture: Define the central governing council, how Astrysis, Hellonex, and Aetherion are represented, executive offices/titles, and the rights of associated worlds.",
+      "How did the transition from the Collapse of the Galactic Front to the Solace Accord establish the GFST calendar benchmark?",
+      "How do Caretakers from [[The Celestial Library]] (such as [[Illyad]]) react if they discover that the Galactic Federation unfolds far in the future of [[Earth]]'s own universe?"
+    ],
+    "metaTruth": "Recovered from December 2024 worldbuilding notes. The Galactic Federation canonically takes place far in the future of the same universe in which Earth existed. Governmental offices, legislative bodies, and executive titles are intentionally left clean for collaborative reconstruction rather than fabricated."
+  },
+  {
+    "id": "cradle-and-atrium",
+    "title": "The Cradle & The Atrium",
+    "category": "Cosmology & Constructs",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "cradle",
+    "image": "/assets/cradle-hallway.png",
+    "imageCaption": "The abyssal threshold corridor leading from the Cradle toward the Celestial Library\u2014guided by sourceless cerulean energy veins.",
+    "subtitle": "Sensory-Deprivation Rebirth Conduit & Awakening Hall of the Caretakers",
+    "quote": "\"Our memories of life before the awakening to the atrium are like a vast, dark ocean\u2014not silent, but filled with the low endless murmur, the background droning of unseen tides.\"",
+    "body": "When an **All-Kind** being is plucked from their home universe by [[The First-Kind]], they are rebirthed into [[The Celestial Library]] through **The Cradle**. The Cradle suspends the chosen subject in an experience akin to a sensory deprivation tank\u2014heard only as a vast, dark ocean with the low endless murmur of unseen tides. This suspension protects the subject's core *self* from fracturing while reconstructing their body into the **Caretaker format**: a corporeal, universal traveler.\n\nFrom the Cradle, the new Caretaker walks down the dark, curved passage traced by glowing cerulean energy veins and awakens alone in **The Atrium**\u2014endless halls of shifting orichalcum\u2014with no guide except the echoes of earlier [[Illyad|Caretakers]] etched into the Library walls, reaching instinctively for their [[Orichalcum Frames]].",
+    "infobox": [
+      {
+        "label": "Function",
+        "value": "Caretaker Reconstruction & Awakening"
+      },
+      {
+        "label": "Sensory Profile",
+        "value": "Dark Ocean / Unseen Tides (Sensory Deprivation)"
+      },
+      {
+        "label": "Guiding Conduit",
+        "value": "Sourceless Cerulean Floor Veins"
+      },
+      {
+        "label": "Memory Effect",
+        "value": "Erases Extraction Moment; Leaves Fractured Shards"
+      },
+      {
+        "label": "Resulting Form",
+        "value": "Corporeal Universal Traveler"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Every Caretaker Induction",
+        "title": "Suspension in the Dark Ocean",
+        "desc": "The chosen All-Kind is suspended in the Cradle as their vessel is reconstructed for multi-universal travel without damaging their conscious self."
+      },
+      {
+        "epoch": "Threshold Walk",
+        "title": "Crossing the Cerulean Hallway",
+        "desc": "Guided only by the glowing blue energy vein along the floor, the Caretaker emerges into the shifting orichalcum Atrium and takes up an Orichalcum Frame."
+      }
+    ],
+    "hooks": [
+      "Has a Caretaker ever experienced a malfunction in the Cradle and retained more than fractured shards of their final breath?",
+      "What are the first etched echoes a newly awakened Caretaker discovers on the walls of the Atrium?"
+    ],
+    "metaTruth": "The Cradle preserves 1st-person mortal intuition\u2014the exact trait the First-Kind value for cataloging universes\u2014while stripping away panic and mortal fragility."
+  },
+  {
+    "id": "celestial-library",
+    "title": "The Celestial Library",
+    "category": "Cosmology & Constructs",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "orichalcum",
+    "image": "/assets/cradle-hallway.png",
+    "imageCaption": "Passage from the Cradle into the marrow of the Celestial Library, where knowledge flows as raw energy.",
+    "subtitle": "Central Mechanistic Construct of the First-Kind \u00b7 Engine of Seeded Universes",
+    "quote": "\"To awaken in the Celestial Library is to awaken in the very marrow of existence, where knowledge flows not as ink but as raw energy.\"",
+    "body": "[[The Celestial Library]] is a vast, central mechanistic construct built by [[The First-Kind]] as they carry out the direction begotten by [[The Moons]]. Rather than a static building, its endless halls of shifting orichalcum gleam under a sourceless light and hum with latent potential.\n\nAs [[The First-Kind]] expend radiative and quantum energy to begin new sections of framework, winding \"tentacles\" extend outward from the construct. As an incidental byproduct of this quantum construction, universes ignite along the tentacles\u2014including the persistent universe that held ancient [[Earth]] and, far in its future, [[The Galactic Federation]]. Within the Library's [[The Cradle & The Atrium]], chosen **All-Kind** beings are rebirthed as Caretakers (such as [[Illyad]]) and equipped with [[Orichalcum Frames]] to experience and catalog the histories of those persistent worlds.",
+    "infobox": [
+      {
+        "label": "Builders",
+        "value": "[[The First-Kind]]"
+      },
+      {
+        "label": "Higher Impetus",
+        "value": "Will of [[The Moons]]"
+      },
+      {
+        "label": "Primary Material",
+        "value": "Shifting Orichalcum (Remembered Metal)"
+      },
+      {
+        "label": "Byproduct",
+        "value": "Tentacle-Seeded Universes"
+      },
+      {
+        "label": "Resident Order",
+        "value": "Caretakers (e.g., [[Illyad]])"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Construct Genesis",
+        "title": "Ignition of the Central Mechanism",
+        "desc": "[[The First-Kind]] establish the core framework; radiative bursts along the winding tentacles begin seeding byproduct universes."
+      },
+      {
+        "epoch": "Caretaker Protocol",
+        "title": "Instantiation of the Cradles",
+        "desc": "Recognizing the ease of access of 1st-person mortal observers, the First-Kind establish [[The Cradle & The Atrium]] to induct Caretakers."
+      }
+    ],
+    "hooks": [
+      "What is the ultimate purpose of the construct that [[The First-Kind]] are building, and how might the cataloged memories of universes later power or serve it?",
+      "Could the Aetherion Beacon (discovered at GFST 75) have a connection to the radiative framework of the Celestial Library?"
+    ],
+    "metaTruth": "There are likely multiple layers of constructs across reality beyond the Celestial Library, as the Moons are unbound to a single realm."
+  },
+  {
+    "id": "aetherion-cluster",
+    "title": "Aetherion Cluster",
+    "category": "Galactic Federation",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "singularity",
+    "subtitle": "Principal Stellar-State of the Federation \u00b7 The Resource Nexus Around a Black Hole",
+    "quote": "\"Anchored in the gravitational well of a black hole, stabilized by the ancient pulse of the Aetherion Beacon since GFST 75.\"",
+    "body": "The **Aetherion Cluster** is one of the three principal Stellar-States of [[The Galactic Federation]], serving as its **Resource Nexus**, commercial logistics hub, and deep-space research frontier.\n\n### Black Hole Habitat & The Aetherion Beacon\nUnlike [[Astrysis]] or [[Hellonex]], Aetherion is not a conventional planetary civilization. It consists of **rogue planetoids and asteroid settlements positioned around a black hole**. In **GFST 75**, the discovery of the **Aetherion Beacon**\u2014which predates the later Federation-wide Beacon\u2014stabilized the chaotic orbital environment around the singularity and allowed permanent settlements to flourish.\n\n### Strategic Role in the Federation\nAetherion's mastery of mineral extraction, scientific research near the singularity, and commercial infrastructure granted [[The Galactic Federation]] strategic resource independence, leading to Aetherion's formal recognition as the Federation's third Stellar-State.",
+    "infobox": [
+      {
+        "label": "Polity Type",
+        "value": "Principal Stellar-State (Resource Nexus)"
+      },
+      {
+        "label": "Parent Union",
+        "value": "[[The Galactic Federation]]"
+      },
+      {
+        "label": "Territory Format",
+        "value": "Rogue Planetoids & Asteroid Settlements"
+      },
+      {
+        "label": "Central Anomaly",
+        "value": "Black Hole (Stabilized Orbit)"
+      },
+      {
+        "label": "Key Artifact",
+        "value": "The Aetherion Beacon (Discovered GFST 75)"
+      },
+      {
+        "label": "Primary Functions",
+        "value": "Resource Extraction, Research, Commerce"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "GFST 75",
+        "title": "Discovery of the Aetherion Beacon",
+        "desc": "Stabilized the chaotic orbital environment of rogue planetoids around the black hole, enabling permanent settlement and predating the Federation-wide Beacon."
+      },
+      {
+        "epoch": "Post-Beacon Era",
+        "title": "Recognition as Third Stellar-State",
+        "desc": "Elevated to full Stellar-State status alongside [[Astrysis]] and [[Hellonex]] due to its strategic resource and logistical indispensability."
+      }
+    ],
+    "hooks": [
+      "What is the true origin of the Aetherion Beacon discovered at GFST 75\u2014and does it resonate with the radiative/quantum mechanisms of [[The First-Kind]]?",
+      "How does political representation work inside the Aetherion Cluster when its citizens live across dispersed rogue planetoids and asteroid habitats rather than a capital planet?"
+    ],
+    "metaTruth": "Established in December 2024 sessions: Aetherion Beacon at GFST 75 predates the later Federation-wide Beacon."
+  },
+  {
+    "id": "astrysis",
+    "title": "Astrysis",
+    "category": "Galactic Federation",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "stellar",
+    "subtitle": "Principal Stellar-State of the Federation \u00b7 The Cultural, Scientific, and Intellectual Center",
+    "quote": "\"From the spires of Astrysis Prime to the luminous archives of Luminethra, Astrysis shapes the intellectual horizon of the Federation.\"",
+    "body": "**Astrysis** is one of the three principal Stellar-States of [[The Galactic Federation]], serving as the union's **cultural, scientific, and intellectual heart**.\n\n### Established Planetary Roster\n* **Astrysis Prime (*Lyvithar Prime*)** \u2014 Capital world of the Stellar-State.\n* **Phorvallis** \u2014 Integrated Member world of Astrysis.\n* **Luminethra** \u2014 Integrated Member world of Astrysis.\n* **Veridun** \u2014 Associated Federation territory linked to Astrysis.\n* **Myrcathis** \u2014 Frontier civilization and proposed member world.\n* **Velstron** \u2014 Frontier civilization that appeared in early Astrysis membership discussions as a potentially developing member rather than a fully integrated world.",
+    "infobox": [
+      {
+        "label": "Polity Type",
+        "value": "Principal Stellar-State (Cultural & Scientific)"
+      },
+      {
+        "label": "Parent Union",
+        "value": "[[The Galactic Federation]]"
+      },
+      {
+        "label": "Capital World",
+        "value": "Astrysis Prime (Lyvithar Prime)"
+      },
+      {
+        "label": "Member Worlds",
+        "value": "Phorvallis, Luminethra"
+      },
+      {
+        "label": "Associated Territory",
+        "value": "Veridun"
+      },
+      {
+        "label": "Frontier / Proposed",
+        "value": "Myrcathis, Velstron"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Federation Era",
+        "title": "Myrcathis & Velstron Membership Deliberations",
+        "desc": "Diplomatic and cultural evaluation of frontier civilizations Myrcathis (proposed member) and Velstron (developing candidate)."
+      }
+    ],
+    "hooks": [
+      "What distinguishes full Member Worlds (Phorvallis, Luminethra) from an Associated Federation Territory (Veridun) under the Aztec-inspired governance model?",
+      "Why is Astrysis Prime also known as Lyvithar Prime\u2014is one an older cultural name and the other its Federation title?"
+    ],
+    "metaTruth": "Preserves exact planetary classifications from Dec 2024 notes, including both Astrysis Prime and Lyvithar Prime nomenclature, and the frontier/proposed status of Myrcathis and Velstron."
+  },
+  {
+    "id": "hellonex",
+    "title": "Hellonex",
+    "category": "Galactic Federation",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "forge",
+    "subtitle": "Principal Stellar-State of the Federation \u00b7 The Industrial Powerhouse",
+    "quote": "\"Measured by the 260-day cycle of the Hellonian calendar, the foundries of Heilon Prime never cool.\"",
+    "body": "**Hellonex** is one of the three principal Stellar-States of [[The Galactic Federation]], functioning as the Federation's **industrial powerhouse and manufacturing center**.\n\n### The 260-Day Hellonian Calendar\nWhile participating in Federation-wide **GFST** for interstellar treaties and commerce, Hellonex maintains a distinct **260-day Hellonian Calendar** inspired by the **Mayan Tzolk'in**.\n\n### Established Planetary Roster\n* **Heilon Prime** \u2014 Principal world and industrial capital of Hellonex.\n* **Draxon Prime** \u2014 Associated planetary territory.\n* **[[Eryndros]]** \u2014 Hellonex-affiliated world with a documented sequence of major colonial and environmental events between GFST 95 and GFST 200.\n* **[[Omnexis]]** \u2014 Appeared in Hellonex territorial material, though also documented in another draft as an independent planetary system home to privateers and research enclaves.",
+    "infobox": [
+      {
+        "label": "Polity Type",
+        "value": "Principal Stellar-State (Industrial Center)"
+      },
+      {
+        "label": "Parent Union",
+        "value": "[[The Galactic Federation]]"
+      },
+      {
+        "label": "Principal World",
+        "value": "Heilon Prime"
+      },
+      {
+        "label": "Affiliated Worlds",
+        "value": "Draxon Prime, [[Eryndros]]"
+      },
+      {
+        "label": "Disputed / Overlapping",
+        "value": "[[Omnexis]] (Also logged as Independent)"
+      },
+      {
+        "label": "Local Timekeeping",
+        "value": "260-Day Hellonian Calendar (Tzolk'in-inspired)"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "GFST 95",
+        "title": "Thermasis Colony (Eryndros)",
+        "desc": "Establishment of the Thermasis Colony on Hellonex-affiliated world [[Eryndros]]."
+      },
+      {
+        "epoch": "GFST 140",
+        "title": "Crystalis Collapse (Eryndros)",
+        "desc": "Catastrophic collapse event on [[Eryndros]] 45 GFST years after the Thermasis Colony."
+      },
+      {
+        "epoch": "GFST 200",
+        "title": "Frostveil Initiative (Eryndros)",
+        "desc": "Launch of the Frostveil Initiative on [[Eryndros]] sixty GFST years after the Crystalis Collapse."
+      }
+    ],
+    "hooks": [
+      "What caused the Crystalis Collapse on [[Eryndros]] at GFST 140, and how did the Frostveil Initiative at GFST 200 respond to it?",
+      "What is the true political relationship between Hellonex and [[Omnexis]]\u2014was Omnexis a former Hellonex territory that became an independent enclave of privateers and researchers?"
+    ],
+    "metaTruth": "Preserves the Mayan Tzolk'in 260-day calendar detail, the exact GFST dates for Eryndros (95, 140, 200), and the dual draft classification of Omnexis."
+  },
+  {
+    "id": "eryndros",
+    "title": "Eryndros",
+    "category": "Worlds & Systems",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "cradle",
+    "subtitle": "Hellonex-Affiliated Federation World \u00b7 Site of the Crystalis Collapse & Frostveil Initiative",
+    "quote": "\"Three dates are carved into the industrial ledgers of Eryndros: GFST 95, GFST 140, and GFST 200.\"",
+    "body": "**Eryndros** is a planetary world affiliated with the industrial Stellar-State of [[Hellonex]] within [[The Galactic Federation]]. It possesses one of the most clearly dated chronological sequences in the GFST record, spanning from early thermal colonization to collapse and cryonic/environmental recovery.",
+    "infobox": [
+      {
+        "label": "Affiliation",
+        "value": "[[Hellonex]] / [[The Galactic Federation]]"
+      },
+      {
+        "label": "Key Era",
+        "value": "GFST 95 \u2013 GFST 200"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "GFST 95",
+        "title": "Thermasis Colony",
+        "desc": "Founding of the Thermasis Colony on Eryndros."
+      },
+      {
+        "epoch": "GFST 140",
+        "title": "Crystalis Collapse",
+        "desc": "Major collapse event impacting Eryndros."
+      },
+      {
+        "epoch": "GFST 200",
+        "title": "Frostveil Initiative",
+        "desc": "Implementation of the Frostveil Initiative across Eryndros."
+      }
+    ],
+    "hooks": [
+      "Did a Caretaker from [[The Celestial Library]] witness the Crystalis Collapse at GFST 140\u2014or pluck a zero-impact survivor from the ruins?"
+    ],
+    "metaTruth": "Recovered from December 2024 Hellonex territorial notes."
+  },
+  {
+    "id": "independent-and-frontier",
+    "title": "Independent Systems, Trade Hubs & Void Caravans",
+    "category": "Worlds & Systems",
+    "canonTier": "Established Dec 2024 Canon",
+    "backdropTheme": "stellar",
+    "subtitle": "Non-Aligned Civilizations, Frontier Worlds, Fallen Realms, and Mobile Polities",
+    "quote": "\"Beyond the three pillars of the Federation lie the free ports of Vornaxis, the research enclaves of Omnexis, the ruins of Zykaris, and the endless routes of the Void Caravans.\"",
+    "body": "Not every civilization in the galaxy belongs to [[The Galactic Federation]]. The political ecosystem extends across independent planetary systems, commercial hubs, frontier worlds, fallen civilizations, and mobile fleets:\n\n### Independent Systems & Enclaves\n* **Crithona** \u2014 Independent planetary system operating outside Federation authority.\n* **Omnexis** \u2014 Independent planetary system associated with **privateers and research enclaves** (also appeared in [[Hellonex]] territorial material in an alternate draft).\n\n### Independent Trade Hubs\n* **Vornaxis** \u2014 Major independent trade hub; commercially vital to interstellar traffic without being politically integrated into the Federation.\n\n### Frontier Civilizations\n* **Myrcathis** \u2014 Frontier civilization and proposed member of [[Astrysis]].\n* **Velstron** \u2014 Frontier civilization discussed in early [[Astrysis]] membership deliberations as a developing candidate.\n\n### Fallen Civilizations\n* **Zykaris** \u2014 Documented fallen civilization.\n\n### Unaligned Mobile Civilizations\n* **Nomadic Void Caravans** \u2014 Mobile spacefaring civilizations not aligned with the Federation, operating completely outside conventional planetary political structures.",
+    "infobox": [
+      {
+        "label": "Independent Systems",
+        "value": "Crithona, Omnexis"
+      },
+      {
+        "label": "Trade Hubs",
+        "value": "Vornaxis"
+      },
+      {
+        "label": "Frontier Worlds",
+        "value": "Velstron, Myrcathis"
+      },
+      {
+        "label": "Fallen Civilization",
+        "value": "Zykaris"
+      },
+      {
+        "label": "Mobile Polities",
+        "value": "Nomadic Void Caravans"
+      }
+    ],
+    "events": [],
+    "hooks": [
+      "What caused the fall of **Zykaris**, and do the privateer/research enclaves of **Omnexis** or scholars of [[Astrysis]] study its ruins?",
+      "How do the **Nomadic Void Caravans** interact with **Vornaxis** trade hubs and the [[Aetherion Cluster]]?"
+    ],
+    "metaTruth": "Consolidates Section III & VI of the December 2024 worldbuilding notes."
+  },
+  {
+    "id": "illyad",
+    "title": "Illyad",
+    "category": "Caretakers",
+    "canonTier": "Core Character",
+    "backdropTheme": "orichalcum",
+    "subtitle": "Caretaker of the Celestial Library \u00b7 Plucked from Ancient Earth (\"Homer\")",
+    "quote": "\"Whether this fate was gifted, or stolen, or earned, we stand at its threshold in a fog of forgotten beginnings.\"",
+    "body": "[[Illyad]] (named after the Amharic spelling of the *Iliad*) is one of the prominent Caretakers operating within [[The Celestial Library]]. Like all Caretakers who awaken in [[The Cradle & The Atrium]], Illyad arrived with no explicit memory of his final mortal breath or the unseen hands of [[The First-Kind]] that selected him\u2014only fractured glass shards of rhythmic verse, bronze-age seas, and whispered epics.\n\nThrough his [[Orichalcum Frames]], Illyad translates the raw radiative histories of seeded universes into enduring chronicles\u2014including [[The Galactic Federation]], which canonically unfolds **far in the future of the very same persistent universe in which his own ancient [[Earth]] existed**, serving as a bridge between the simultaneous perception of [[The First-Kind]] and the lived first-person reality of the **All-Kinds**.",
+    "infobox": [
+      {
+        "label": "Designation",
+        "value": "Illyad (Amharic: \u12a2\u120d\u12eb\u12f5)"
+      },
+      {
+        "label": "Role",
+        "value": "Caretaker / Universal Traveler"
+      },
+      {
+        "label": "Origin World & Era",
+        "value": "[[Earth]] (Aegean Antiquity \u00b7 Same Universe as the Federation)"
+      },
+      {
+        "label": "Former Identity",
+        "value": "Homer (Unremembered by Subject)"
+      },
+      {
+        "label": "Causal Disruption",
+        "value": "0.00% (Historical Mystery)"
+      },
+      {
+        "label": "Rebirth Conduit",
+        "value": "[[The Cradle & The Atrium]]"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Pre-Extraction (Earth)",
+        "title": "The Homeric Vanishing",
+        "desc": "Selected by [[The First-Kind]] at a point in [[Earth]] history where neither his death nor his singular existence was historically fixed, ensuring zero timeline disruption."
+      },
+      {
+        "epoch": "Atrium Awakening",
+        "title": "Emergence from the Cradle",
+        "desc": "Reconstructed in [[The Cradle & The Atrium]] into the corporeal Caretaker format; instinctively reached for his first [[Orichalcum Frames]]."
+      }
+    ],
+    "hooks": [
+      "Does Illyad realize that [[The Galactic Federation]]\u2014with its Starfall War, Aztec-inspired union, and fallen Zykaris\u2014takes place far in the future of the very same universe where his own ancient [[Earth]] once existed?"
+    ],
+    "metaTruth": "In Earth history, scholars never resolved when or how Homer died or whether \"Homer\" was even a single person. The First-Kind exploited this historical blind spot to pluck him with 0% causal impact; ironically, when Illyad chronicles the Galactic Federation, he is observing the deep future of his own home universe."
+  },
+  {
+    "id": "orichalcum-frames",
+    "title": "Orichalcum Frames",
+    "category": "Artifacts & Phenomena",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "orichalcum",
+    "subtitle": "Intricate First-Kind Decoders Forged from Remembered Metal",
+    "quote": "\"Forged from orichalcum\u2014metal not mined but remembered\u2014the frames hum with forgotten intention... We do not read these histories; we experience them.\"",
+    "body": "Upon awakening in [[The Cradle & The Atrium]], every Caretaker finds their hands reaching instinctively for the **Orichalcum Frames**\u2014intricate devices crafted to decode the mysteries of [[The First-Kind]] within [[The Celestial Library]].\n\nOrichalcum is a metal not mined from stone, but *remembered*\u2014shaped by remembrance rather than flame, resisting decay and time itself while holding the lingering echo of will. Through these frames, the histories of entire universes unfold first as torrents of sensation and vision\u2014a dying star becomes a shudder in the chest; the birth of a civilization blooms like a native memory\u2014before dissolving into shifting symbols and pure data.",
+    "infobox": [
+      {
+        "label": "Composition",
+        "value": "Orichalcum (Metal Shaped by Remembrance)"
+      },
+      {
+        "label": "Location",
+        "value": "[[The Celestial Library]]"
+      },
+      {
+        "label": "Users",
+        "value": "Caretakers (e.g., [[Illyad]])"
+      },
+      {
+        "label": "Primary Output",
+        "value": "Sensory Vision Torrent -> Shifting Symbol Data"
+      }
+    ],
+    "events": [],
+    "hooks": [],
+    "metaTruth": "The Orichalcum Frame is also the in-universe counterpart to the Galactic Compendium interface itself."
+  },
+  {
+    "id": "the-first-kind",
+    "title": "The First-Kind",
+    "category": "Cosmology & Constructs",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "orichalcum",
+    "subtitle": "The Unseen Hands \u00b7 Instinctual Builders of the Constructs",
+    "quote": "\"The unseen hands, the keepers of words and echoes, with much curiosity welcome you.\"",
+    "body": "[[The First-Kind]] are higher-dimensional builders begotten as a result of the will of [[The Moons]]. From their perspective, time within the byproduct universes is **non-linear and simultaneous**. Recognizing the ease of access of a being with lived 1st-person mortal experience, they pluck zero-impact **All-Kinds** (such as [[Illyad]]) via [[The Cradle & The Atrium]] to document universal history.",
+    "infobox": [
+      {
+        "label": "Byname",
+        "value": "The Unseen Hands"
+      },
+      {
+        "label": "Origin",
+        "value": "Begotten by the Will of [[The Moons]]"
+      },
+      {
+        "label": "Temporal Perception",
+        "value": "Simultaneous / Non-Linear"
+      }
+    ],
+    "events": [],
+    "hooks": [],
+    "metaTruth": "The First-Kind never personally greet Caretakers in the Atrium."
+  },
+  {
+    "id": "the-moons",
+    "title": "The Moons",
+    "category": "Cosmology & Constructs",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "cradle",
+    "subtitle": "Unbound Confluence of Energy & Will Across Realms",
+    "quote": "\"Not bound to reality, they are the confluence of energy across realms\u2014the silent will from which the builders emerged.\"",
+    "body": "**The Moons** exist at the highest tier of the cosmology\u2014unbound to physical reality, acting as a confluence of energy and will across realms whose direction begets [[The First-Kind]].",
+    "infobox": [
+      {
+        "label": "Nature",
+        "value": "Confluence of Energy Across Realms"
+      },
+      {
+        "label": "Resultant Order",
+        "value": "[[The First-Kind]]"
+      }
+    ],
+    "events": [],
+    "hooks": [],
+    "metaTruth": "Suggests the existence of multiple layers of constructs beyond the Celestial Library."
+  },
+  {
+    "id": "earth",
+    "title": "Earth",
+    "category": "Worlds & Systems",
+    "canonTier": "Core Foundation",
+    "backdropTheme": "stellar",
+    "subtitle": "Ancient Cradle World \u00b7 Early Epoch of the Galactic Federation's Universe \u00b7 Origin of Caretaker Illyad",
+    "quote": "\"Whispers of lives left behind cling to us, faint as a dream slipping through waking hands.\"",
+    "body": "**Earth** is an ancient planetary cradle within a **Persistent Seeded Universe**\u2014canonically the **very same universe** in whose distant future [[The Galactic Federation]] later arises.\n\nDuring Earth's Aegean Antiquity, its historical blind spots made it a prime recruitment ground for [[The First-Kind]], yielding [[Illyad]] (formerly the Greek poet Homer) with 0.00% causal disruption. Eons later within this same persistent cosmos, interstellar civilizations form the three Stellar-States of [[Astrysis]], [[Hellonex]], and the [[Aetherion Cluster]].",
+    "infobox": [
+      {
+        "label": "Cosmological Continuity",
+        "value": "Same Persistent Universe as [[The Galactic Federation]] (Ancient Era)"
+      },
+      {
+        "label": "Far-Future Horizon",
+        "value": "[[The Galactic Federation]] (GFST Era)"
+      },
+      {
+        "label": "Physics Classification",
+        "value": "Persistent (Self-Stabilizing)"
+      },
+      {
+        "label": "Known Caretakers Plucked",
+        "value": "[[Illyad]] (Homer)"
+      }
+    ],
+    "events": [
+      {
+        "epoch": "Ancient Epoch (Aegean Antiquity)",
+        "title": "Extraction of Homer (Illyad)",
+        "desc": "[[The First-Kind]] pluck Homer from an unrecorded historical blind spot on Earth into [[The Cradle & The Atrium]]."
+      },
+      {
+        "epoch": "Deep Future (Same Universe)",
+        "title": "Rise of the Galactic Federation",
+        "desc": "Far in the future of Earth's universe, the formative interstellar wars and the Solace Accord give rise to [[The Galactic Federation]]."
+      }
+    ],
+    "hooks": [
+      "What became of Earth itself across the eons leading up to the Formative Era and the rise of [[The Galactic Federation]]?"
+    ],
+    "metaTruth": "Earth and the Galactic Federation share the same persistent universe across deep time, providing earthly familiarity, cultural/calendrical echoes, and dramatic irony for Illyad."
+  }
+]

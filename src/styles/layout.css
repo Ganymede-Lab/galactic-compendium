@@ -1,0 +1,300 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard Focus Visibility */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Hide legacy dark canvas layers so reading area remains calm and clear */
+#visual-backdrop-layer,
+#ambient-canvas {
+  display: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem; /* Space for mobile persistent nav */
+}
+
+/* --- STICKY PRIMARY NAVIGATION HEADER --- */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-emblem {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--amber-tint);
+  border: 1px solid var(--amber-border);
+  color: var(--amber-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.brand-subtitle {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Task-Based Primary Navigation Tabs */
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.primary-nav-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.primary-nav-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.primary-nav-btn[aria-current="page"],
+.primary-nav-btn.active {
+  background: var(--amber-strong);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Header Search & Secondary Actions */
+.header-utilities {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.search-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 0.42rem 0.75rem;
+  font-size: 0.85rem;
+  width: 230px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.search-box::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box:focus {
+  background: var(--bg-surface);
+  border-color: var(--amber-strong);
+}
+
+/* Global Search Quick-Jump Popover (Works from any tool) */
+.search-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 300px;
+  max-height: 340px;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  z-index: 50;
+  padding: 0.4rem;
+}
+
+.search-popover.hidden {
+  display: none;
+}
+
+/* Sub-Toolbar for Contextual Groupings (Explore / Create / Timeline) */
+.context-subbar {
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.context-subbar-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* --- WORKSPACE LAYOUT --- */
+.workspace-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  flex: 1;
+}
+
+/* Explore Mode: Contextual Sidebar + Reading Area */
+.explore-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.explore-layout.sidebar-collapsed {
+  grid-template-columns: 1fr;
+}
+
+.explore-layout.sidebar-collapsed .explore-sidebar {
+  display: none;
+}
+
+/* Non-Explore Tools (Create, Timeline, Continuity): Full-width, no permanent archive list */
+.tool-layout {
+  display: block;
+}
+
+.tool-layout .explore-sidebar {
+  display: none;
+}
+
+.explore-sidebar {
+  position: sticky;
+  top: 4.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Mobile Persistent Bottom Navigation Bar (Avoids scrolling back to top) */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .explore-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .explore-sidebar {
+    position: static;
+  }
+
+  .explore-sidebar.mobile-hidden {
+    display: none;
+  }
+
+  .header-inner {
+    padding: 0.65rem 1rem;
+  }
+
+  .workspace-container {
+    padding: 1.15rem 1rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .primary-nav {
+    display: none; /* Replaced by persistent bottom nav on small screens */
+  }
+
+  .search-box {
+    width: 165px;
+  }
+
+  .mobile-bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 45;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.5rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-nav-btn {
+    padding: 0.45rem 0.25rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .mobile-nav-btn.active {
+    background: var(--amber-strong);
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
