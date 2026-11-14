@@ -14,11 +14,14 @@ const articles = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', 'data', 
 const planetChains = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', 'data', 'planetChains.json'), 'utf-8'));
 const starmapNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', 'data', 'starmapNodes.json'), 'utf-8'));
 
-// Inline the Cradle-to-Library hallway artwork as a base64 data URI for the standalone artifact preview
-const imgPath = path.join(__dirname, 'public', 'assets', 'cradle-hallway.png');
+// Inline the Cradle-to-Library hallway artwork as a base64 data URI for the standalone artifact and GitHub Pages build
+const webpPath = path.join(__dirname, 'public', 'assets', 'cradle-hallway.webp');
+const pngPath = path.join(__dirname, 'public', 'assets', 'cradle-hallway.png');
+const imgPath = fs.existsSync(webpPath) ? webpPath : pngPath;
+const imgMime = fs.existsSync(webpPath) ? 'image/webp' : 'image/png';
 if (fs.existsSync(imgPath)) {
   const b64 = fs.readFileSync(imgPath).toString('base64');
-  const dataUri = `data:image/png;base64,${b64}`;
+  const dataUri = `data:${imgMime};base64,${b64}`;
   for (const art of articles) {
     if (art.image === '/assets/cradle-hallway.png') {
       art.image = dataUri;
@@ -69,4 +72,9 @@ let outputHtml = htmlTemplate
 fs.mkdirSync(path.join(__dirname, 'dist'), { recursive: true });
 const distFile = path.join(__dirname, 'dist', 'galactic_compendium.html');
 fs.writeFileSync(distFile, outputHtml, 'utf-8');
-console.log('Built standalone artifact:', distFile, 'Bytes:', Buffer.byteLength(outputHtml));
+
+fs.mkdirSync(path.join(__dirname, 'docs'), { recursive: true });
+const docsFile = path.join(__dirname, 'docs', 'index.html');
+fs.writeFileSync(docsFile, outputHtml, 'utf-8');
+
+console.log('Built standalone artifact & GitHub Pages index:', distFile, docsFile, 'Bytes:', Buffer.byteLength(outputHtml));

@@ -151,7 +151,7 @@ async function fetchCompendiumData() {
         state.articles = state.articles.map(a => {
           const seedArt = seedById.get(a.id);
           if (!seedArt) return a;
-          if (syncedIds.has(a.id)) {
+          if (syncedIds.has(a.id) || seedArt.approvedCanon) {
             return JSON.parse(JSON.stringify(seedArt));
           }
           if (seedArt.image && (!a.image || a.image.startsWith('data:image/svg+xml') || a.image === '/assets/cradle-hallway.png')) {
@@ -159,6 +159,11 @@ async function fetchCompendiumData() {
           }
           return a;
         });
+        const existingIds = new Set(state.articles.map(a => a.id));
+        const newlyPublishedCanon = seed.articles.filter(a => !existingIds.has(a.id));
+        if (newlyPublishedCanon.length > 0) {
+          state.articles = [...JSON.parse(JSON.stringify(newlyPublishedCanon)), ...state.articles];
+        }
       }
     } catch {
       state.articles = JSON.parse(JSON.stringify(seed.articles || []));
@@ -1327,7 +1332,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('btn-open-github-submission')?.addEventListener('click', () => {
     updateCommunityPreviewText();
     const previewEl = document.getElementById('form-sub-preview');
-    const bodyText = previewEl ? previewEl.value : '';
+    const dossierText = previewEl ? previewEl.value : '';
+    const bodyText = `${dossierText}\n\n---\n*Maintainer Action: Comment \`/approve\` on this issue (or add the \`approved-canon\` label) to automatically publish this entry to the live Galactic Compendium.*`;
     const titleText = `[Canon Submission] ${activeCommunityArticle?.title || 'New Lore Entry'}`;
     const issueUrl = `https://github.com/Ganymede-Lab/galactic-compendium/issues/new?title=${encodeURIComponent(titleText)}&body=${encodeURIComponent(bodyText)}`;
     window.open(issueUrl, '_blank', 'noopener,noreferrer');

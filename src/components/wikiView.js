@@ -118,7 +118,7 @@ export function renderWikiArticle(container, article, allArticles, callbacks) {
           <div class="meta-tags">
             <span class="tag">Category: <strong>${article.category}</strong></span>
             <span class="tag tag-mono">Canon Status: <strong>${article.canonTier || 'Expanded Compendium'}</strong></span>
-            ${article.canonTier !== 'Established Dec 2024 Canon' ? `
+            ${article.canonTier !== 'Established Dec 2024 Canon' && !article.approvedCanon ? `
               <span class="preview-status-badge preview-status-saved">Saved in this browser</span>
             ` : ''}
           </div>
