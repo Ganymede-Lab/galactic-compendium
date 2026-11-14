@@ -118,11 +118,15 @@ export function renderWikiArticle(container, article, allArticles, callbacks) {
           <div class="meta-tags">
             <span class="tag">Category: <strong>${article.category}</strong></span>
             <span class="tag tag-mono">Canon Status: <strong>${article.canonTier || 'Expanded Compendium'}</strong></span>
+            ${article.canonTier !== 'Established Dec 2024 Canon' ? `
+              <span class="preview-status-badge preview-status-saved">Saved in this browser</span>
+            ` : ''}
           </div>
 
           <div style="display:flex; flex-wrap:wrap; gap:0.45rem;">
             <button type="button" id="btn-edit-article" class="btn">Edit Entry</button>
             <button type="button" id="btn-branch-story" class="btn">Branch Related Entry</button>
+            <button type="button" id="btn-submit-article-community" class="btn">Submit for community review</button>
             ${hasGenesisLink ? `
               <button type="button" id="btn-open-in-genesis" class="btn" title="Open this world in Planetary Genesis comparison">
                 Compare in Planetary Genesis &rarr;
@@ -272,6 +276,11 @@ export function renderWikiArticle(container, article, allArticles, callbacks) {
   // Wire action event listeners (passing trigger element for focus return)
   container.querySelector('#btn-edit-article')?.addEventListener('click', e => callbacks.onEdit(article, e.currentTarget));
   container.querySelector('#btn-branch-story')?.addEventListener('click', e => callbacks.onBranch(article, e.currentTarget));
+  container.querySelector('#btn-submit-article-community')?.addEventListener('click', e => {
+    if (callbacks.onSubmitForReview) {
+      callbacks.onSubmitForReview(article, e.currentTarget, '#btn-submit-article-community');
+    }
+  });
   container.querySelector('#btn-add-event')?.addEventListener('click', e => callbacks.onAddEvent(article, e.currentTarget));
   container.querySelector('#btn-jump-timeline')?.addEventListener('click', () => callbacks.onOpenTimeline(article));
   container.querySelector('#btn-open-in-genesis')?.addEventListener('click', () => callbacks.onOpenGenesis(article));

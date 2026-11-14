@@ -228,7 +228,7 @@ export function renderSeederView(container, callbacks) {
     if (statusBadge) {
       if (matchedEntry) {
         statusBadge.className = 'preview-status-badge preview-status-saved';
-        statusBadge.textContent = 'Already in compendium';
+        statusBadge.textContent = 'Saved in this browser';
       } else if (isModifiedFromInitial) {
         statusBadge.className = 'preview-status-badge preview-status-unsaved';
         statusBadge.textContent = 'Unsaved preview';
@@ -270,7 +270,7 @@ export function renderSeederView(container, callbacks) {
         saveBtn.textContent = 'Saving…';
       } else {
         saveBtn.removeAttribute('aria-busy');
-        saveBtn.textContent = 'Save to compendium';
+        saveBtn.textContent = 'Save in this browser';
       }
     }
 
@@ -287,10 +287,10 @@ export function renderSeederView(container, callbacks) {
         ${matchedEntry ? `
           <div id="seeder-existing-notice" class="seeder-existing-banner" role="status" aria-live="polite">
             <div style="font-size:0.83rem; color:var(--text-primary);">
-              <strong>Already in Compendium:</strong> This generated universe (<strong>${matchedEntry.title}</strong>) has already been saved.
+              <strong>Saved in this browser:</strong> This generated universe (<strong>${matchedEntry.title}</strong>) is already saved in your browser on this device.
             </div>
             <button type="button" id="btn-open-existing-seed" class="btn btn-primary" style="padding:0.35rem 0.8rem; font-size:0.82rem;">
-              Open existing entry
+              Open saved entry
             </button>
           </div>
         ` : ''}
@@ -399,7 +399,7 @@ export function renderSeederView(container, callbacks) {
         </div>
         <h1 class="article-title" style="font-size:1.55rem;">Universe Seeding Engine</h1>
         <p class="article-subtitle">
-          Generate a new star sector along a Celestial Library branch, optionally customize individual parameters, and save it directly to the compendium.
+          Generate a new star sector along a Celestial Library branch, optionally customize individual parameters, and save it in this browser—or submit it for community canon review.
         </p>
       </div>
 
@@ -551,10 +551,18 @@ export function renderSeederView(container, callbacks) {
               <p id="seeder-preview-subtitle" style="font-size:0.86rem; color:var(--text-secondary); margin-top:0.25rem;"></p>
             </div>
 
-            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
-              <button type="button" id="btn-instantiate-seed" class="btn btn-primary">
-                Save to compendium
-              </button>
+            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.35rem;">
+              <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;">
+                <button type="button" id="btn-submit-seeder-community" class="btn">
+                  Submit for community review
+                </button>
+                <button type="button" id="btn-instantiate-seed" class="btn btn-primary">
+                  Save in this browser
+                </button>
+              </div>
+              <span style="font-size:0.72rem; color:var(--text-muted);">
+                Saves privately in this browser, or submit to propose for shared canon.
+              </span>
             </div>
           </div>
 
@@ -733,6 +741,18 @@ export function renderSeederView(container, callbacks) {
       saveErrorMessage = result.error || 'Could not persist entry to storage. Please retry.';
       updateActionAndHeaderState();
       container.querySelector('#btn-instantiate-seed')?.focus();
+    }
+  });
+
+  // Submit for community canon review
+  container.querySelector('#btn-submit-seeder-community')?.addEventListener('click', e => {
+    const codeInput = container.querySelector('#seeder-code');
+    const nameInput = container.querySelector('#seeder-name');
+    if (codeInput) currentSeed = codeInput.value;
+    if (nameInput && renameExpanded) customName = nameInput.value;
+    buildPreview();
+    if (callbacks.onSubmitForReview) {
+      callbacks.onSubmitForReview(JSON.parse(JSON.stringify(lastPreview)), e.currentTarget, '#btn-submit-seeder-community');
     }
   });
 }

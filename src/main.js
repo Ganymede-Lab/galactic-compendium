@@ -535,6 +535,7 @@ function renderMainContent() {
         },
         onNavigateTitle: (title, triggerEl) => navigateToTitle(title, triggerEl),
         onZoomImage: (src, caption, triggerEl) => openImageLightbox(src, caption, triggerEl, '#infobox-img-zoom'),
+        onSubmitForReview: (a, triggerEl, fallbackSel) => openCommunityModal(a, triggerEl, fallbackSel),
         onSectionJump: (_, desiredScrollY) => {
           entryScrollPositions.set(state.currentArticleId, desiredScrollY);
           commitNavigationHistory(false);
@@ -553,6 +554,7 @@ function renderMainContent() {
           selectArticle(existingId);
         },
         onNavigateTitle: (title, triggerEl) => navigateToTitle(title, triggerEl),
+        onSubmitForReview: (a, triggerEl, fallbackSel) => openCommunityModal(a, triggerEl, fallbackSel),
         onInstantiateUniverse: async newArt => {
           // Guard against duplicate saves of the identical configuration
           const existing = findMatchingSavedConfiguration(state.articles, newArt);
@@ -1016,6 +1018,101 @@ function closeImageLightbox(restoreFocus = true) {
   if (restoreFocus) restoreModalTriggerFocus();
 }
 
+let activeCommunityArticle = null;
+
+function formatReadableDossier(article, author = '', notes = '') {
+  if (!article) return '';
+  const lines = [
+    `# ${article.title}`,
+    article.subtitle ? `*${article.subtitle}*` : '',
+    '',
+    `- **Category**: ${article.category || 'Worlds & Systems'}`,
+    `- **Canon Tier / Seed**: ${article.canonTier || 'Community Submission'}`,
+    author.trim() ? `- **Submitted By**: ${author.trim()}` : '',
+    notes.trim() ? `- **Contributor Notes**: ${notes.trim()}` : ''
+  ].filter(Boolean);
+
+  if (Array.isArray(article.infobox) && article.infobox.length > 0) {
+    lines.push('', '## Supporting Facts');
+    for (const row of article.infobox) {
+      lines.push(`- **${row.label}**: ${row.value}`);
+    }
+  }
+
+  if (article.quote) {
+    lines.push('', '## Archival Epigraph', `> ${article.quote}`);
+  }
+
+  if (article.body) {
+    lines.push('', '## Overview & Lore', article.body);
+  }
+
+  if (Array.isArray(article.events) && article.events.length > 0) {
+    lines.push('', '## Chronology & Historical Sequence');
+    for (const ev of article.events) {
+      lines.push(`- **${ev.epoch} — ${ev.title}**: ${ev.desc}`);
+    }
+  }
+
+  if (Array.isArray(article.hooks) && article.hooks.length > 0) {
+    lines.push('', '## Open Development Threads');
+    for (const h of article.hooks) {
+      lines.push(`- ${h}`);
+    }
+  }
+
+  if (article.metaTruth) {
+    lines.push('', '## Provenance Note', article.metaTruth);
+  }
+
+  return lines.join('\n');
+}
+
+function updateCommunityPreviewText() {
+  const previewEl = document.getElementById('form-sub-preview');
+  const authorEl = document.getElementById('form-sub-author');
+  const notesEl = document.getElementById('form-sub-notes');
+  if (!previewEl || !activeCommunityArticle) return;
+  previewEl.value = formatReadableDossier(
+    activeCommunityArticle,
+    authorEl ? authorEl.value : '',
+    notesEl ? notesEl.value : ''
+  );
+}
+
+function setCommunityPositiveFeedback(htmlMsg) {
+  const el = document.getElementById('modal-community-feedback');
+  if (!el) return;
+  if (!htmlMsg) {
+    el.style.display = 'none';
+    el.innerHTML = '';
+  } else {
+    el.style.display = 'block';
+    el.innerHTML = `<div class="seeder-existing-banner" style="margin-bottom:0;">${htmlMsg}</div>`;
+  }
+}
+
+function openCommunityModal(article, triggerEl = null, fallbackSelector = null) {
+  activeCommunityArticle = article ? JSON.parse(JSON.stringify(article)) : getCurrentArticle();
+  const headingEl = document.getElementById('modal-community-heading');
+  if (headingEl && activeCommunityArticle?.title) {
+    headingEl.textContent = `Submit for Community Review: ${activeCommunityArticle.title}`;
+  }
+  const authorEl = document.getElementById('form-sub-author');
+  const notesEl = document.getElementById('form-sub-notes');
+  if (authorEl) authorEl.value = '';
+  if (notesEl) notesEl.value = '';
+  setCommunityPositiveFeedback('');
+  updateCommunityPreviewText();
+  openModalDialog('modal-community', 'form-sub-author', triggerEl, fallbackSelector);
+}
+
+function closeCommunityModal(restoreFocus = true) {
+  setCommunityPositiveFeedback('');
+  closeModalDialog('modal-community');
+  if (restoreFocus) restoreModalTriggerFocus();
+}
+
 function applyHashState(hashStr) {
   const clean = (hashStr || '').replace(/^#/, '');
   if (!clean) return;
@@ -1185,6 +1282,58 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('btn-close-planet-modal')?.addEventListener('click', () => closePlanetModal(true));
   document.getElementById('btn-save-planet-modal')?.addEventListener('click', savePlanetModal);
 
+  document.getElementById('btn-close-community-modal')?.addEventListener('click', () => closeCommunityModal(true));
+  document.getElementById('form-sub-author')?.addEventListener('input', updateCommunityPreviewText);
+  document.getElementById('form-sub-notes')?.addEventListener('input', updateCommunityPreviewText);
+
+  document.getElementById('btn-copy-community-dossier')?.addEventListener('click', async () => {
+    updateCommunityPreviewText();
+    const previewEl = document.getElementById('form-sub-preview');
+    const text = previewEl ? previewEl.value : '';
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else if (previewEl) {
+        previewEl.focus();
+        previewEl.select();
+        document.execCommand('copy');
+      }
+      setCommunityPositiveFeedback('<strong>Copied to clipboard:</strong> Readable dossier copied! You can paste it directly into Discord, email, or a message.');
+    } catch {
+      if (previewEl) {
+        previewEl.focus();
+        previewEl.select();
+        try { document.execCommand('copy'); } catch {}
+      }
+      setCommunityPositiveFeedback('<strong>Ready to copy:</strong> Dossier selected above—press Ctrl+C / Cmd+C to copy.');
+    }
+  });
+
+  document.getElementById('btn-download-community-dossier')?.addEventListener('click', () => {
+    updateCommunityPreviewText();
+    const previewEl = document.getElementById('form-sub-preview');
+    const text = previewEl ? previewEl.value : '';
+    const slug = slugify(activeCommunityArticle?.title || 'universe-dossier') || 'universe-dossier';
+    const dataStr = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+    const a = document.createElement('a');
+    a.setAttribute('href', dataStr);
+    a.setAttribute('download', `${slug}-dossier.txt`);
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setCommunityPositiveFeedback(`<strong>Downloaded:</strong> Saved readable dossier as <code>${slug}-dossier.txt</code>.`);
+  });
+
+  document.getElementById('btn-open-github-submission')?.addEventListener('click', () => {
+    updateCommunityPreviewText();
+    const previewEl = document.getElementById('form-sub-preview');
+    const bodyText = previewEl ? previewEl.value : '';
+    const titleText = `[Canon Submission] ${activeCommunityArticle?.title || 'New Lore Entry'}`;
+    const issueUrl = `https://github.com/Ganymede-Lab/galactic-compendium/issues/new?title=${encodeURIComponent(titleText)}&body=${encodeURIComponent(bodyText)}`;
+    window.open(issueUrl, '_blank', 'noopener,noreferrer');
+    setCommunityPositiveFeedback('<strong>Opened GitHub submission:</strong> Complete your submission in the new tab, or use <strong>Copy readable dossier</strong> if you prefer to share without GitHub.');
+  });
+
   document.getElementById('btn-close-lightbox')?.addEventListener('click', e => {
     e.stopPropagation();
     closeImageLightbox(true);
@@ -1203,6 +1352,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         if (activeModalId === 'modal-article') closeArticleModal(true);
         else if (activeModalId === 'modal-event') closeEventModal(true);
         else if (activeModalId === 'modal-planet') closePlanetModal(true);
+        else if (activeModalId === 'modal-community') closeCommunityModal(true);
         else if (activeModalId === 'modal-lightbox') closeImageLightbox(true);
         return;
       }

@@ -85,11 +85,11 @@
 
           <div style="border-top:1px solid var(--border-subtle); padding-top:0.85rem;">
             <div class="sidebar-section-label">
-              <span>Archive Data</span>
+              <span>This Browser's Storage</span>
             </div>
             <div style="display:flex; gap:0.4rem;">
-              <button type="button" id="btn-export-json" class="btn" style="flex:1; font-size:0.78rem; padding:0.35rem 0.5rem;">Export JSON</button>
-              <button type="button" id="btn-reset-seed" class="btn" style="font-size:0.78rem; padding:0.35rem 0.5rem;" title="Reload default seed lore">Sync Seed</button>
+              <button type="button" id="btn-export-json" class="btn" style="flex:1; font-size:0.78rem; padding:0.35rem 0.5rem;" title="Download a backup of entries saved in this browser">Backup Data</button>
+              <button type="button" id="btn-reset-seed" class="btn" style="font-size:0.78rem; padding:0.35rem 0.5rem;" title="Reset this browser's local changes back to default canon">Reset Local</button>
             </div>
           </div>
         </aside>
@@ -168,9 +168,12 @@
 
         <div id="modal-article-feedback" style="display:none;"></div>
 
-        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
-          <button type="button" id="btn-cancel-article-modal" class="btn">Cancel</button>
-          <button type="button" id="btn-save-article-modal" class="btn btn-primary">Save Entry</button>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
+          <span style="font-size:0.74rem; color:var(--text-muted);">Saves privately in this browser on your device. You can submit entries for community review after saving.</span>
+          <div style="display:flex; gap:0.5rem;">
+            <button type="button" id="btn-cancel-article-modal" class="btn">Cancel</button>
+            <button type="button" id="btn-save-article-modal" class="btn btn-primary">Save in this browser</button>
+          </div>
         </div>
       </div>
     </div>
@@ -197,8 +200,9 @@
           <textarea id="form-ev-desc" rows="3" class="form-textarea"></textarea>
         </div>
         <div id="modal-event-feedback" style="display:none;"></div>
-        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem;">
-          <button type="button" id="btn-save-event-modal" class="btn btn-primary">Save Event</button>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; padding-top:0.5rem;">
+          <span style="font-size:0.74rem; color:var(--text-muted);">Saves in this browser on your device.</span>
+          <button type="button" id="btn-save-event-modal" class="btn btn-primary">Save in this browser</button>
         </div>
       </div>
     </div>
@@ -243,8 +247,9 @@
           <input id="form-pc-s5" type="text" class="form-input" placeholder="How Stages 1–4 caused this world's political role and history..." />
         </div>
         <div id="modal-planet-feedback" style="display:none;"></div>
-        <div style="display:flex; justify-content:flex-end; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
-          <button type="button" id="btn-save-planet-modal" class="btn btn-primary">Save Causal Sequence &amp; Sync Wiki</button>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; padding-top:0.5rem; border-top:1px solid var(--border-subtle);">
+          <span style="font-size:0.74rem; color:var(--text-muted);">Saves in this browser on your device.</span>
+          <button type="button" id="btn-save-planet-modal" class="btn btn-primary">Save in this browser</button>
         </div>
       </div>
     </div>
@@ -258,6 +263,48 @@
       </div>
       <img id="lightbox-img" src="" alt="Full Resolution Visual" style="max-width:100%; max-height:78vh; border-radius:var(--radius-md); border:1px solid var(--border-strong); box-shadow:var(--shadow-modal);" />
       <p id="lightbox-caption" style="font-size:0.88rem; color:#ffffff; margin-top:0.75rem; font-style:italic;"></p>
+    </div>
+  </div>
+
+  <!-- MODAL 5: SUBMIT FOR COMMUNITY CANON REVIEW -->
+  <div id="modal-community" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-community-heading">
+    <div class="modal-card" style="max-width:640px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:0.75rem; margin-bottom:0.85rem;">
+        <h3 id="modal-community-heading" style="font-size:1.1rem; font-weight:700;">Submit for Community Canon Review</h3>
+        <button type="button" id="btn-close-community-modal" class="btn" style="padding:0.25rem 0.6rem;">Close</button>
+      </div>
+
+      <p style="font-size:0.84rem; color:var(--text-secondary); margin:0 0 0.85rem 0; line-height:1.5;">
+        Entries you save on this site are stored privately in your browser on this device. To propose this creation for the shared Galactic Compendium canon, open a pre-filled review submission on GitHub or copy the formatted readable dossier below to share directly.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:0.75rem;">
+        <div class="stage-pair">
+          <div>
+            <label for="form-sub-author" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Your Name or Handle (Optional)</label>
+            <input id="form-sub-author" type="text" class="form-input" placeholder="e.g., Caretaker Vaelen, @username..." />
+          </div>
+          <div>
+            <label for="form-sub-notes" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Notes for Canon Review (Optional)</label>
+            <input id="form-sub-notes" type="text" class="form-input" placeholder="How this sector or entry connects to existing lore..." />
+          </div>
+        </div>
+
+        <div>
+          <label for="form-sub-preview" style="display:block; font-size:0.78rem; font-weight:600; color:var(--text-secondary); margin-bottom:0.25rem;">Formatted Lore Dossier (Human-Readable)</label>
+          <textarea id="form-sub-preview" rows="8" readonly class="form-textarea" style="font-family:var(--font-mono); font-size:0.78rem; background:var(--bg-subtle);"></textarea>
+        </div>
+
+        <div id="modal-community-feedback" role="status" aria-live="polite" style="display:none;"></div>
+
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; padding-top:0.65rem; border-top:1px solid var(--border-subtle);">
+          <div style="display:flex; flex-wrap:wrap; gap:0.45rem;">
+            <button type="button" id="btn-copy-community-dossier" class="btn">Copy readable dossier</button>
+            <button type="button" id="btn-download-community-dossier" class="btn">Download dossier (.txt)</button>
+          </div>
+          <button type="button" id="btn-open-github-submission" class="btn btn-primary">Submit on GitHub &nearr;</button>
+        </div>
+      </div>
     </div>
   </div>
 
